@@ -140,7 +140,16 @@ function Game() {
         )}
         {gameState.map((value, i) => {
           return (
-            <Square key={i} value={value} onClick={() => handleClick(i)} />
+            <Square
+              key={i}
+              value={value}
+              onClick={() => {
+                if (value !== " ") {
+                  return;
+                }
+                handleClick(i);
+              }}
+            />
           );
         })}
       </div>
